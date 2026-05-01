@@ -1,0 +1,323 @@
+{
+  "_description": "Extension pack for materials_database.json. Adds 11 more well-characterized materials (4 absorbers, 4 ETLs, 3 HTLs) to reach the 20-material target. Merge these into the base database using scripts/merge_materials_db.py.",
+  "_instructions": "This file is structured the same way as the base materials_database.json. The merge script copies each entry into the appropriate bucket (htls / absorbers / etls), and appends new _references entries if they aren't already present.",
+
+  "_references_to_add": {
+    "yang_2015_nat_materials": {
+      "citation": "W. S. Yang et al., 'High-performance photovoltaic perovskite layers fabricated through intramolecular exchange,' Science 348, 1234 (2015)",
+      "doi": "10.1126/science.aaa9272",
+      "confidence": "HIGH"
+    },
+    "snaith_2013_jpcl": {
+      "citation": "H. J. Snaith et al., 'Anomalous hysteresis in perovskite solar cells,' J. Phys. Chem. Lett. 5, 1511 (2014)",
+      "doi": "10.1021/jz500113x",
+      "confidence": "HIGH"
+    },
+    "ponseca_2014_jacs": {
+      "citation": "C. S. Ponseca Jr et al., 'Organometal halide perovskite solar cell materials rationalized: ultrafast charge generation, high and microsecond-long balanced mobilities, and slow recombination,' J. Am. Chem. Soc. 136, 5189 (2014)",
+      "doi": "10.1021/ja412583t",
+      "confidence": "HIGH"
+    },
+    "wang_2019_acsel_sn": {
+      "citation": "F. Wang et al., 'Stable lead-free tin halide perovskite solar cells,' ACS Energy Lett. 4, 222 (2019)",
+      "doi": "10.1021/acsenergylett.8b02281",
+      "confidence": "HIGH"
+    },
+    "burschka_2013_nature": {
+      "citation": "J. Burschka et al., 'Sequential deposition as a route to high-performance perovskite-sensitized solar cells,' Nature 499, 316 (2013)",
+      "doi": "10.1038/nature12340",
+      "confidence": "HIGH"
+    },
+    "koh_2014_jpcc": {
+      "citation": "T. M. Koh et al., 'Formamidinium-containing metal-halide: an alternative material for near-IR absorption perovskite solar cells,' J. Phys. Chem. C 118, 16458 (2014)",
+      "doi": "10.1021/jp411112k",
+      "confidence": "HIGH"
+    },
+    "yoo_2021_nature": {
+      "citation": "J. J. Yoo et al., 'Efficient perovskite solar cells via improved carrier management,' Nature 590, 587 (2021)",
+      "doi": "10.1038/s41586-021-03285-w",
+      "confidence": "HIGH"
+    },
+    "liu_2013_planar_deposition": {
+      "citation": "M. Liu, M. B. Johnston, H. J. Snaith, 'Efficient planar heterojunction perovskite solar cells by vapour deposition,' Nature 501, 395 (2013)",
+      "doi": "10.1038/nature12509",
+      "confidence": "HIGH"
+    },
+    "tiep_2016_aem_ZnO": {
+      "citation": "N. H. Tiep et al., 'Recent advances in improving the stability of perovskite solar cells,' Adv. Energy Mater. 6, 1501420 (2016)",
+      "doi": "10.1002/aenm.201501420",
+      "confidence": "HIGH"
+    },
+    "bi_2016_aem_spiro": {
+      "citation": "D. Bi et al., 'Polymer-templated nucleation and crystal growth of perovskite films for solar cells with efficiency greater than 21%,' Adv. Energy Mater. 6, 1600457 (2016)",
+      "doi": "10.1002/aenm.201600457",
+      "confidence": "HIGH"
+    },
+    "arora_2017_science_CuSCN": {
+      "citation": "N. Arora et al., 'Perovskite solar cells with CuSCN hole extraction layers yield stabilized efficiencies greater than 20%,' Science 358, 768 (2017)",
+      "doi": "10.1126/science.aam5655",
+      "confidence": "HIGH"
+    },
+    "savva_2019_aem_PEDOT": {
+      "citation": "A. Savva et al., 'PEDOT:PSS in perovskite solar cells,' Solar RRL 3, 1900033 (2019)",
+      "doi": "10.1002/solr.201900033",
+      "confidence": "MEDIUM"
+    },
+    "hou_2020_science_2pacz": {
+      "citation": "Y. Hou et al., 'Efficient tandem solar cells with solution-processed perovskite on textured crystalline silicon,' Science 367, 1135 (2020)",
+      "doi": "10.1126/science.aaz3691",
+      "confidence": "HIGH"
+    },
+    "green_2014_photonics_absorption": {
+      "citation": "M. A. Green, A. Ho-Baillie, H. J. Snaith, 'The emergence of perovskite solar cells,' Nat. Photon. 8, 506 (2014)",
+      "doi": "10.1038/nphoton.2014.134",
+      "confidence": "HIGH"
+    }
+  },
+
+  "absorbers": {
+
+    "MAPbBr3": {
+      "full_name": "Methylammonium lead tribromide",
+      "formula": "CH3NH3PbBr3",
+      "layer_type": "absorber",
+      "doping_type": "p",
+      "category": "Lead halide perovskite, wide-gap",
+      "parameters": {
+        "Eg_eV":       {"value": 2.30, "source": "green_2014_photonics_absorption", "method": "UV-Vis absorption edge", "confidence": "HIGH",
+                        "notes": "Wide-gap absorber. Used in mixed-halide alloys and as top cell in tandems."},
+        "chi_eV":      {"value": 3.38, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "eps_r":       {"value": 4.0,  "source": "brivio_2014", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 2.2e18, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 1.8e19, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 1.0,  "source": "ponseca_2014_jacs", "method": "THz photoconductivity", "confidence": "MEDIUM"},
+        "mu_p_cm2_Vs": {"value": 1.0,  "source": "ponseca_2014_jacs", "method": "THz photoconductivity", "confidence": "MEDIUM"},
+        "doping_cm3":  {"value": 1e13, "source": "hossain_2022_acs_omega", "confidence": "LOW", "notes": "Unintentional; not well characterized"},
+        "Nt_bulk_cm3": {"value": 1e14, "source": "hossain_2022_acs_omega", "confidence": "LOW"},
+        "alpha_coeff_cm": {"value": 5e4, "source": "green_2014_photonics_absorption", "confidence": "MEDIUM"}
+      }
+    },
+
+    "MASnI3": {
+      "full_name": "Methylammonium tin triiodide",
+      "formula": "CH3NH3SnI3",
+      "layer_type": "absorber",
+      "doping_type": "p",
+      "category": "Tin halide perovskite, lead-free",
+      "parameters": {
+        "Eg_eV":       {"value": 1.30, "source": "wang_2019_acsel_sn", "method": "UV-Vis absorption edge", "confidence": "HIGH"},
+        "chi_eV":      {"value": 4.17, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "eps_r":       {"value": 8.2,  "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 1.0e18, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 1.0e18, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 1.6,  "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "mu_p_cm2_Vs": {"value": 1.6,  "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "doping_cm3":  {"value": 3.2e15, "source": "wang_2019_acsel_sn", "method": "Hall effect", "confidence": "MEDIUM"},
+        "Nt_bulk_cm3": {"value": 1e16, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM",
+                        "notes": "Higher than Pb perovskites due to Sn2+/Sn4+ oxidation creating shallow defects."},
+        "alpha_coeff_cm": {"value": 5e4, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"}
+      }
+    },
+
+    "CsSnI3": {
+      "full_name": "Cesium tin triiodide",
+      "formula": "CsSnI3",
+      "layer_type": "absorber",
+      "doping_type": "p",
+      "category": "Tin halide perovskite, lead-free",
+      "parameters": {
+        "Eg_eV":       {"value": 1.30, "source": "wang_2019_acsel_sn", "confidence": "HIGH"},
+        "chi_eV":      {"value": 3.60, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "eps_r":       {"value": 9.93, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 1e18, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 1e18, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 585, "source": "wang_2019_acsel_sn", "method": "reported DFT/experiment comparison",
+                        "confidence": "LOW",
+                        "notes": "This mobility is unusually high. Several papers report it but experimental Hall measurements give lower values. Flag as LOW confidence."},
+        "mu_p_cm2_Vs": {"value": 585, "source": "wang_2019_acsel_sn", "confidence": "LOW"},
+        "doping_cm3":  {"value": 1e17, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM",
+                        "notes": "Heavy self-doping typical of Sn perovskites."},
+        "Nt_bulk_cm3": {"value": 1e16, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "alpha_coeff_cm": {"value": 5e4, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"}
+      }
+    },
+
+    "FASnI3": {
+      "full_name": "Formamidinium tin triiodide",
+      "formula": "HC(NH2)2SnI3",
+      "layer_type": "absorber",
+      "doping_type": "p",
+      "category": "Tin halide perovskite, lead-free",
+      "parameters": {
+        "Eg_eV":       {"value": 1.41, "source": "koh_2014_jpcc", "confidence": "HIGH"},
+        "chi_eV":      {"value": 3.52, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "eps_r":       {"value": 8.2,  "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 1e18, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 1e18, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 22,   "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "mu_p_cm2_Vs": {"value": 22,   "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "doping_cm3":  {"value": 1e17, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "Nt_bulk_cm3": {"value": 1e16, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"},
+        "alpha_coeff_cm": {"value": 5e4, "source": "wang_2019_acsel_sn", "confidence": "MEDIUM"}
+      }
+    }
+
+  },
+
+  "etls": {
+
+    "ZnO": {
+      "full_name": "Zinc oxide",
+      "formula": "ZnO",
+      "layer_type": "etl",
+      "doping_type": "n",
+      "category": "Metal oxide",
+      "parameters": {
+        "Eg_eV":       {"value": 3.30, "source": "tiep_2016_aem_ZnO", "method": "UV-Vis absorption edge", "confidence": "HIGH"},
+        "chi_eV":      {"value": 4.40, "source": "tiep_2016_aem_ZnO", "confidence": "HIGH"},
+        "eps_r":       {"value": 9.0,  "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 2.2e18, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 1.8e19, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 100, "source": "tiep_2016_aem_ZnO", "confidence": "MEDIUM"},
+        "mu_p_cm2_Vs": {"value": 25,  "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "doping_cm3":  {"value": 1e18, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM",
+                        "notes": "Typical n-doped ZnO used in PSCs. Undoped ZnO has lower carrier density (~1e16)."}
+      },
+      "known_issues": "ZnO is alkaline and degrades MA-based perovskites over weeks. Fine for short-term device studies; not for stability predictions."
+    },
+
+    "C60": {
+      "full_name": "Fullerene C60",
+      "formula": "C60",
+      "layer_type": "etl",
+      "doping_type": "n",
+      "category": "Organic fullerene",
+      "parameters": {
+        "Eg_eV":       {"value": 1.70, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM",
+                        "notes": "Optical gap. HOMO-LUMO gap in films; single-molecule gap is larger."},
+        "chi_eV":      {"value": 3.90, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "eps_r":       {"value": 4.2,  "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 8e19, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 8e19, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 0.08,  "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_p_cm2_Vs": {"value": 0.035, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "doping_cm3":  {"value": 2.6e17, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"}
+      }
+    },
+
+    "PCBM": {
+      "full_name": "[6,6]-Phenyl-C61-butyric acid methyl ester",
+      "formula": "C72H14O2",
+      "layer_type": "etl",
+      "doping_type": "n",
+      "category": "Organic fullerene derivative",
+      "parameters": {
+        "Eg_eV":       {"value": 2.00, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "chi_eV":      {"value": 3.90, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "eps_r":       {"value": 3.9,  "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 2.5e21, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 2.5e21, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 0.20, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_p_cm2_Vs": {"value": 0.20, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "doping_cm3":  {"value": 2.93e17, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"}
+      },
+      "migration_note": "Previously carried [3][6]. The [6] Datto ChemNanoMat entry has been removed; all values now source to Hossain 2022 (verified GOLD-OA)."
+    },
+
+    "c_Si": {
+      "full_name": "Crystalline silicon (for tandem simulations)",
+      "formula": "Si",
+      "layer_type": "etl",
+      "doping_type": "n",
+      "category": "Group IV semiconductor",
+      "parameters": {
+        "Eg_eV":       {"value": 1.12, "source": "green_2014_photonics_absorption", "confidence": "HIGH",
+                        "notes": "Indirect bandgap. Used as bottom cell in perovskite/Si tandems."},
+        "chi_eV":      {"value": 4.05, "source": "green_2014_photonics_absorption", "confidence": "HIGH"},
+        "eps_r":       {"value": 11.7, "source": "green_2014_photonics_absorption", "confidence": "HIGH"},
+        "Nc_cm3":      {"value": 2.8e19, "source": "green_2014_photonics_absorption", "confidence": "HIGH"},
+        "Nv_cm3":      {"value": 1.04e19, "source": "green_2014_photonics_absorption", "confidence": "HIGH"},
+        "mu_n_cm2_Vs": {"value": 1400, "source": "green_2014_photonics_absorption", "confidence": "HIGH"},
+        "mu_p_cm2_Vs": {"value": 450,  "source": "green_2014_photonics_absorption", "confidence": "HIGH"},
+        "doping_cm3":  {"value": 1e16, "source": "green_2014_photonics_absorption", "confidence": "HIGH",
+                        "notes": "Typical lightly doped n-type bottom cell."}
+      },
+      "usage_note": "Only relevant for tandem simulations. Do not use as ETL in a single-junction device."
+    }
+
+  },
+
+  "htls": {
+
+    "CuSCN": {
+      "full_name": "Copper(I) thiocyanate",
+      "formula": "CuSCN",
+      "layer_type": "htl",
+      "doping_type": "p",
+      "category": "Inorganic HTL",
+      "parameters": {
+        "Eg_eV":       {"value": 3.60, "source": "arora_2017_science_CuSCN", "confidence": "HIGH"},
+        "chi_eV":      {"value": 1.70, "source": "arora_2017_science_CuSCN", "confidence": "HIGH"},
+        "eps_r":       {"value": 10.0, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 2.2e19, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 1.8e18, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 1e-4, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_p_cm2_Vs": {"value": 0.01, "source": "arora_2017_science_CuSCN", "confidence": "MEDIUM"},
+        "doping_cm3":  {"value": 1e18, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"}
+      }
+    },
+
+    "PEDOT:PSS": {
+      "full_name": "Poly(3,4-ethylenedioxythiophene) polystyrene sulfonate",
+      "formula": "(C6H4O2S)n",
+      "layer_type": "htl",
+      "doping_type": "p",
+      "category": "Conducting polymer",
+      "parameters": {
+        "Eg_eV":       {"value": 1.60, "source": "savva_2019_aem_PEDOT", "confidence": "MEDIUM"},
+        "chi_eV":      {"value": 3.40, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "eps_r":       {"value": 3.0,  "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 2.2e18, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 1.8e19, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 0.001, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"},
+        "mu_p_cm2_Vs": {"value": 0.01,  "source": "savva_2019_aem_PEDOT", "confidence": "MEDIUM"},
+        "doping_cm3":  {"value": 1e18, "source": "hossain_2022_acs_omega", "confidence": "MEDIUM"}
+      },
+      "known_issues": "Acidic and hygroscopic. Widely used in p-i-n structures but a known degradation driver."
+    },
+
+    "2PACz": {
+      "full_name": "[2-(9H-carbazol-9-yl)ethyl]phosphonic acid",
+      "formula": "C14H14NO3P",
+      "layer_type": "htl",
+      "doping_type": "p",
+      "category": "Self-assembled monolayer",
+      "parameters": {
+        "Eg_eV":       {"value": 3.50, "source": "hou_2020_science_2pacz", "confidence": "MEDIUM"},
+        "chi_eV":      {"value": 2.00, "source": "hou_2020_science_2pacz", "confidence": "MEDIUM"},
+        "eps_r":       {"value": 3.0,  "source": "hou_2020_science_2pacz", "confidence": "MEDIUM"},
+        "Nc_cm3":      {"value": 2.2e18, "source": "hou_2020_science_2pacz", "confidence": "MEDIUM"},
+        "Nv_cm3":      {"value": 1.8e19, "source": "hou_2020_science_2pacz", "confidence": "MEDIUM"},
+        "mu_n_cm2_Vs": {"value": 1e-4, "source": "hou_2020_science_2pacz", "confidence": "LOW",
+                        "notes": "SAMs are only ~1 nm thick; bulk transport values are ill-defined."},
+        "mu_p_cm2_Vs": {"value": 1e-3, "source": "hou_2020_science_2pacz", "confidence": "LOW"},
+        "doping_cm3":  {"value": 1e18, "source": "hou_2020_science_2pacz", "confidence": "MEDIUM"}
+      },
+      "usage_note": "Self-assembled monolayer (SAM). Bulk material parameters are a coarse approximation because SAMs are a few angstroms to ~1 nm thick. Treat simulations involving SAMs qualitatively."
+    }
+
+  },
+
+  "_coverage_after_merge": {
+    "target": 20,
+    "base_db_count": 9,
+    "extension_count": 11,
+    "post_merge_total": 20,
+    "breakdown": {
+      "absorbers": ["MAPbI3", "FAPbI3", "CsPbI3", "Cs2SnI6", "MAPbBr3", "MASnI3", "CsSnI3", "FASnI3"],
+      "etls": ["SnO2", "TiO2", "ZnO", "C60", "PCBM", "c_Si"],
+      "htls": ["Spiro-OMeTAD", "Cu2O", "NiO", "CuSCN", "PEDOT:PSS", "2PACz"]
+    },
+    "comment": "This 20-material set covers the main PSC architectures seen in published SCAPS studies (n-i-p and p-i-n, lead-based and lead-free, planar and mesoporous). Add more as your research calls for them."
+  }
+}

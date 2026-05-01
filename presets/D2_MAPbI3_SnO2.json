@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "preset_id": "D2",
+    "description": "Spiro-OMeTAD / MAPbI3 / SnO2",
+    "reference": "Hossain et al., ACS Omega 7, 43210 (2022)",
+    "doi": "10.1021/acsomega.2c05912",
+    "expected_scaps_pce": 23.80,
+    "expected_voc": 1.13,
+    "expected_jsc": 24.95,
+    "expected_ff": 0.843
+  },
+  "htl": "Spiro-OMeTAD",
+  "absorber": "MAPbI3",
+  "etl": "SnO2",
+  "d_htl_nm": 200,
+  "d_abs_nm": 500,
+  "d_etl_nm": 50,
+  "Nt_abs": 1e14,
+  "temperature_K": 300,
+  "enable_idl": false
+}

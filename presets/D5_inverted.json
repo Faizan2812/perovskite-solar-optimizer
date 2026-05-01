@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "preset_id": "D5",
+    "description": "PEDOT:PSS / MAPbI3 / C60 - inverted p-i-n architecture",
+    "reference": "Oyelade et al., Sci. Rep. 14 (2024)",
+    "expected_scaps_pce": 21.50,
+    "expected_voc": 1.08,
+    "expected_jsc": 23.00,
+    "expected_ff": 0.865,
+    "notes": "Inverted architecture provides an architectural stress test. Thinner HTL and ETL than the n-i-p stacks in D1-D4."
+  },
+  "htl": "PEDOT:PSS",
+  "absorber": "MAPbI3",
+  "etl": "C60",
+  "d_htl_nm": 30,
+  "d_abs_nm": 400,
+  "d_etl_nm": 30,
+  "Nt_abs": 1e14,
+  "temperature_K": 300,
+  "enable_idl": false
+}

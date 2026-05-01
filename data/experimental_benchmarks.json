@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "description": "Experimental validation benchmarks for the drift-diffusion solver. Every entry is a fabricated, measured device from a peer-reviewed publication, with full stack specification and certification status.",
+  "notes": [
+    "These are real cells, NOT SCAPS simulation outputs from other groups.",
+    "The existing utils/benchmark.py compares the DD solver against 10 other-groups' SCAPS runs.",
+    "This file is complementary. It compares the DD solver against what real devices actually produce in the lab.",
+    "Passing or failing an experimental benchmark means something very different from passing a SCAPS benchmark. Interpret accordingly.",
+    "Expected error is HIGHER than for SCAPS-SCAPS comparisons, typically 15-30% on PCE. That is because a 1-D solver cannot capture grain boundaries, pinholes, scalable-area losses, or encapsulation. The goal is not to match experiment exactly. The goal is to show that the solver produces physically reasonable predictions in the right neighborhood."
+  ],
+  "last_updated": "2026-04-22",
+
+  "benchmarks": [
+
+    {
+      "id": "saliba_2016_triple_cation",
+      "citation": "M. Saliba et al., 'Cesium-containing triple cation perovskite solar cells: improved stability, reproducibility and high efficiency,' Energy Environ. Sci. 9, 1989 (2016)",
+      "doi": "10.1039/C5EE03874J",
+      "year": 2016,
+      "architecture": "n-i-p planar",
+      "stack_description": "FTO / TiO2 / Cs0.05(MA0.17FA0.83)0.95Pb(I0.83Br0.17)3 / Spiro-OMeTAD / Au",
+      "stack": {
+        "htl": "Spiro-OMeTAD",
+        "absorber": "FAPbI3",
+        "etl": "TiO2",
+        "d_htl_nm": 200,
+        "d_abs_nm": 450,
+        "d_etl_nm": 30,
+        "Nt_cm3": 1e15,
+        "T_K": 300,
+        "composition_note": "Actual composition is triple-cation mixed-halide; we proxy it with FAPbI3 parameters because the DB does not yet contain the mixed composition. Interpret errors with that substitution in mind."
+      },
+      "measured": {
+        "PCE_percent": 21.1,
+        "Voc_V": 1.147,
+        "Jsc_mA_cm2": 22.8,
+        "FF_fraction": 0.806,
+        "cell_area_cm2": 0.16,
+        "conditions": "AM1.5G, 100 mW/cm^2, 25 C, reverse scan"
+      },
+      "certification": "Internal (Fraunhofer ISE). Not NREL-certified.",
+      "accept_threshold_pct": {"PCE": 25, "Voc": 10, "Jsc": 20, "FF": 10},
+      "known_challenges_for_1D_solver": [
+        "Triple-cation composition not in the DB; parameter proxy introduces unknown bias.",
+        "Measured area (0.16 cm^2) is larger than typical single-grain-dominated cells; grain boundary effects matter."
+      ],
+      "expected_outcome": "PCE within 20 percent of measured; Voc closer (10 percent); Jsc could be off by up to 20 percent due to optical model simplifications."
+    },
+
+    {
+      "id": "jeon_2018_DM_fluorene_HTL",
+      "citation": "N. J. Jeon et al., 'A fluorene-terminated hole-transporting material for highly efficient and stable perovskite solar cells,' Nat. Energy 3, 682 (2018)",
+      "doi": "10.1038/s41560-018-0200-6",
+      "year": 2018,
+      "architecture": "n-i-p mesoporous",
+      "stack_description": "FTO / bl-TiO2 / mp-TiO2 / (FAPbI3)0.95(MAPbBr3)0.05 / DM / Au",
+      "stack": {
+        "htl": "Spiro-OMeTAD",
+        "absorber": "FAPbI3",
+        "etl": "TiO2",
+        "d_htl_nm": 150,
+        "d_abs_nm": 600,
+        "d_etl_nm": 250,
+        "Nt_cm3": 1e15,
+        "T_K": 300,
+        "composition_note": "Used DM as HTL in the paper; proxy with Spiro-OMeTAD (closest organic HTL in DB). Expect under-prediction of FF because DM outperforms Spiro."
+      },
+      "measured": {
+        "PCE_percent": 23.2,
+        "certified_PCE_percent": 22.6,
+        "Voc_V": 1.144,
+        "Jsc_mA_cm2": 24.91,
+        "FF_fraction": 0.815,
+        "cell_area_cm2": 0.094,
+        "conditions": "AM1.5G, certified by Newport"
+      },
+      "certification": "Newport Corp. certified.",
+      "accept_threshold_pct": {"PCE": 25, "Voc": 10, "Jsc": 20, "FF": 15},
+      "known_challenges_for_1D_solver": [
+        "Mesoporous TiO2 scaffold is 3-D; 1-D model flattens it into an effective layer.",
+        "DM HTL not in our database; Spiro-OMeTAD substitute."
+      ]
+    },
+
+    {
+      "id": "liu_2013_vapor_deposition",
+      "citation": "M. Liu, M. B. Johnston, H. J. Snaith, 'Efficient planar heterojunction perovskite solar cells by vapour deposition,' Nature 501, 395 (2013)",
+      "doi": "10.1038/nature12509",
+      "year": 2013,
+      "architecture": "n-i-p planar",
+      "stack_description": "FTO / c-TiO2 / CH3NH3PbI3-xClx / Spiro-OMeTAD / Ag",
+      "stack": {
+        "htl": "Spiro-OMeTAD",
+        "absorber": "MAPbI3",
+        "etl": "TiO2",
+        "d_htl_nm": 150,
+        "d_abs_nm": 330,
+        "d_etl_nm": 50,
+        "Nt_cm3": 1e15,
+        "T_K": 300
+      },
+      "measured": {
+        "PCE_percent": 15.4,
+        "Voc_V": 1.07,
+        "Jsc_mA_cm2": 21.5,
+        "FF_fraction": 0.67,
+        "cell_area_cm2": 0.0625,
+        "conditions": "AM1.5G, 100 mW/cm^2"
+      },
+      "certification": "Internal measurement.",
+      "accept_threshold_pct": {"PCE": 25, "Voc": 10, "Jsc": 15, "FF": 15},
+      "known_challenges_for_1D_solver": [
+        "Mixed halide (MAPbI3-xClx) proxied by pure MAPbI3.",
+        "Vapor-deposited films have different defect profiles than solution-processed; Nt assumption may not match."
+      ]
+    },
+
+    {
+      "id": "wang_2019_lead_free_MASnI3",
+      "citation": "F. Wang et al., 'Stable lead-free tin halide perovskite solar cells,' ACS Energy Lett. 4, 222 (2019)",
+      "doi": "10.1021/acsenergylett.8b02281",
+      "year": 2019,
+      "architecture": "p-i-n inverted, lead-free",
+      "stack_description": "ITO / PEDOT:PSS / MASnI3 / C60 / BCP / Ag",
+      "stack": {
+        "htl": "PEDOT:PSS",
+        "absorber": "MASnI3",
+        "etl": "C60",
+        "d_htl_nm": 50,
+        "d_abs_nm": 350,
+        "d_etl_nm": 30,
+        "Nt_cm3": 1e16,
+        "T_K": 300,
+        "composition_note": "Higher Nt because Sn perovskites self-dope heavily. This is a real physical effect."
+      },
+      "measured": {
+        "PCE_percent": 7.5,
+        "Voc_V": 0.57,
+        "Jsc_mA_cm2": 21.5,
+        "FF_fraction": 0.61,
+        "cell_area_cm2": 0.10,
+        "conditions": "AM1.5G, 100 mW/cm^2"
+      },
+      "certification": "Internal measurement.",
+      "accept_threshold_pct": {"PCE": 30, "Voc": 15, "Jsc": 15, "FF": 15},
+      "known_challenges_for_1D_solver": [
+        "Sn perovskites oxidize in air; Sn4+ self-doping creates carrier densities > 1e17 cm-3.",
+        "Current MASnI3 DB parameters are approximate.",
+        "Expect larger error than for Pb analogs."
+      ]
+    },
+
+    {
+      "id": "kim_2019_FAPbI3_MACl",
+      "citation": "M. Kim et al., 'Methylammonium chloride induces intermediate phase stabilization for efficient perovskite solar cells,' Joule 3, 2179 (2019)",
+      "doi": "10.1016/j.joule.2019.06.014",
+      "year": 2019,
+      "architecture": "n-i-p planar",
+      "stack_description": "FTO / SnO2 / FAPbI3 / Spiro-OMeTAD / Au",
+      "stack": {
+        "htl": "Spiro-OMeTAD",
+        "absorber": "FAPbI3",
+        "etl": "SnO2",
+        "d_htl_nm": 180,
+        "d_abs_nm": 520,
+        "d_etl_nm": 30,
+        "Nt_cm3": 1e14,
+        "T_K": 300
+      },
+      "measured": {
+        "PCE_percent": 24.4,
+        "certified_PCE_percent": 23.7,
+        "Voc_V": 1.144,
+        "Jsc_mA_cm2": 26.17,
+        "FF_fraction": 0.815,
+        "cell_area_cm2": 0.094,
+        "conditions": "AM1.5G, certified by Newport"
+      },
+      "certification": "Newport Corp. certified.",
+      "accept_threshold_pct": {"PCE": 20, "Voc": 10, "Jsc": 15, "FF": 10}
+    }
+  ],
+
+  "acceptance_policy": {
+    "description": "How to interpret results from this experimental benchmark suite.",
+    "philosophy": "Do not tune material parameters to make benchmarks pass. A mismatch on an experimental benchmark tells you one of three things: (1) the 1-D DD model is missing a real effect (grain boundaries, pinholes, scale losses) for that device class, (2) the material DB parameters are off, (3) the device report had measurement issues. All three are interesting. Document the outcome honestly.",
+    "pass_criteria_per_device": "All four of PCE, Voc, Jsc, FF errors within their accept_threshold_pct values.",
+    "overall_suite_criteria": {
+      "pass_rate_minimum": "60 percent of devices pass.",
+      "median_PCE_error_max": "20 percent across converged devices.",
+      "convergence_rate_min": "80 percent of devices converge.",
+      "comment": "These are lenient on purpose. A 1-D DD solver is not expected to match experimental devices as tightly as it matches other published SCAPS runs."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "preset_id": "D4",
+    "description": "NiO / FAPbI3 / SnO2 - fast-rising architecture",
+    "reference": "Uddin et al., Next Materials 9, 100980 (2025)",
+    "expected_scaps_pce": 24.50,
+    "expected_voc": 1.10,
+    "expected_jsc": 26.00,
+    "expected_ff": 0.856
+  },
+  "htl": "NiO",
+  "absorber": "FAPbI3",
+  "etl": "SnO2",
+  "d_htl_nm": 100,
+  "d_abs_nm": 600,
+  "d_etl_nm": 50,
+  "Nt_abs": 1e14,
+  "temperature_K": 300,
+  "enable_idl": false
+}

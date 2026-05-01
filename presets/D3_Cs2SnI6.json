@@ -1,0 +1,22 @@
+{
+  "_meta": {
+    "preset_id": "D3",
+    "description": "Cu2O / Cs2SnI6 / SnO2 - lead-free tin halide",
+    "reference": "Chabri et al., J. Electron. Mater. 52, 2722 (2023)",
+    "doi": "10.1007/s11664-023-10247-5",
+    "expected_scaps_pce": 24.80,
+    "expected_voc": 1.06,
+    "expected_jsc": 28.50,
+    "expected_ff": 0.820,
+    "notes": "Lead-free chalcogenide. Known hard case: asymmetric mobility (mu_n=53, mu_p=0.03 cm^2/Vs) produces sharp J-V knee near V_oc that 1D solvers can under-resolve."
+  },
+  "htl": "Cu2O",
+  "absorber": "Cs2SnI6",
+  "etl": "SnO2",
+  "d_htl_nm": 150,
+  "d_abs_nm": 500,
+  "d_etl_nm": 50,
+  "Nt_abs": 1e14,
+  "temperature_K": 300,
+  "enable_idl": false
+}

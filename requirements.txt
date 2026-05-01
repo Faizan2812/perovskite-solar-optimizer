@@ -1,0 +1,52 @@
+# ============================================================
+# perovskite-solar-cell-tool - Python dependencies
+#
+# Uses minimum-version constraints (>=) instead of exact pins.
+# This lets pip pick wheels compatible with whatever Python
+# version Streamlit Cloud is running (currently 3.14 on free
+# tier as of April 2026).
+#
+# For exact reproducibility, use runtime.txt to pin Python 3.11
+# and add == pins below.
+# ============================================================
+
+# --- UI ---
+streamlit>=1.39
+
+# --- Numerics ---
+numpy>=1.26,<3.0
+scipy>=1.13
+pandas>=2.2
+
+# --- Plotting ---
+plotly>=5.24
+matplotlib>=3.9
+
+# --- ML ---
+scikit-learn>=1.5
+xgboost>=2.1
+catboost>=1.2
+
+# --- Real PINN (PyTorch, CPU-only for Streamlit Cloud) ---
+torch>=2.4
+
+# --- Evolutionary optimizers ---
+# geneticalgorithm - optional, app works without it
+# geneticalgorithm==1.0.2
+
+# --- Utilities ---
+openpyxl>=3.1
+tqdm>=4.66
+
+# --- Testing (dev only, harmless at deploy time) ---
+pytest>=8.3
+
+# ============================================================
+# Deliberately OMITTED for Streamlit Cloud:
+#
+#   jax, jaxlib - can fail on Cloud's glibc version and the
+#                 primary PINN (ai/pinn_real.py) uses PyTorch,
+#                 not JAX. Install separately for the
+#                 ai/pinn_poisson.py JAX PINN variant.
+#
+# ============================================================

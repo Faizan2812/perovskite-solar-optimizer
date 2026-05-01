@@ -1,0 +1,212 @@
+{
+  "timestamp": "2026-04-28 08:14:43 UTC",
+  "n_active": 29,
+  "n_format_valid": 29,
+  "n_online_resolves": 0,
+  "n_failures": 0,
+  "results": {
+    "araujo_2025_rsc_sust": {
+      "ref_id": "araujo_2025_rsc_sust",
+      "citation": "Ara\u00fajo V.H.D., Nogueira A.F., Trist\u00e3o J.C., dos Santos L.J., RSC Sustainability 3, 4314-4335 (2025)",
+      "doi": "10.1039/D5SU00526D",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "arora_2017_science_CuSCN": {
+      "ref_id": "arora_2017_science_CuSCN",
+      "citation": "N. Arora et al., 'Perovskite solar cells with CuSCN hole extraction layers yield stabilized efficiencies greater than 20%,' Science 358, 768 (2017)",
+      "doi": "10.1126/science.aam5655",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "bi_2016_aem_spiro": {
+      "ref_id": "bi_2016_aem_spiro",
+      "citation": "D. Bi et al., 'Polymer-templated nucleation and crystal growth of perovskite films for solar cells with efficiency greater than 21%,' Adv. Energy Mater. 6, 1600457 (2016)",
+      "doi": "10.1002/aenm.201600457",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "brivio_2014": {
+      "ref_id": "brivio_2014",
+      "citation": "Brivio et al., Phys. Rev. B 89, 155204 (2014)",
+      "doi": "10.1103/PhysRevB.89.155204",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "burschka_2013_nature": {
+      "ref_id": "burschka_2013_nature",
+      "citation": "J. Burschka et al., 'Sequential deposition as a route to high-performance perovskite-sensitized solar cells,' Nature 499, 316 (2013)",
+      "doi": "10.1038/nature12340",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "chabri_2023_jem": {
+      "ref_id": "chabri_2023_jem",
+      "citation": "Chabri et al., J. Electron. Mater. 52, 2722 (2023)",
+      "doi": "10.1007/s11664-023-10247-5",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "dequilettes_2015_science": {
+      "ref_id": "dequilettes_2015_science",
+      "citation": "DeQuilettes et al., Science 348, 683 (2015)",
+      "doi": "10.1126/science.aaa5333",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "eperon_2014_ees": {
+      "ref_id": "eperon_2014_ees",
+      "citation": "Eperon et al., Energy Environ. Sci. 7, 982 (2014)",
+      "doi": "10.1039/c3ee43822h",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "green_2014_photonics": {
+      "ref_id": "green_2014_photonics",
+      "citation": "Green et al., Nat. Photon. 8, 506 (2014)",
+      "doi": "10.1038/nphoton.2014.134",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "green_2014_photonics_absorption": {
+      "ref_id": "green_2014_photonics_absorption",
+      "citation": "M. A. Green, A. Ho-Baillie, H. J. Snaith, 'The emergence of perovskite solar cells,' Nat. Photon. 8, 506 (2014)",
+      "doi": "10.1038/nphoton.2014.134",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "hossain_2022_acs_omega": {
+      "ref_id": "hossain_2022_acs_omega",
+      "citation": "Hossain et al., ACS Omega 7, 43210 (2022)",
+      "doi": "10.1021/acsomega.2c05912",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "hou_2020_science_2pacz": {
+      "ref_id": "hou_2020_science_2pacz",
+      "citation": "Y. Hou et al., 'Efficient tandem solar cells with solution-processed perovskite on textured crystalline silicon,' Science 367, 1135 (2020)",
+      "doi": "10.1126/science.aaz3691",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "jiang_2017_nat_energy": {
+      "ref_id": "jiang_2017_nat_energy",
+      "citation": "Jiang et al., Nat. Energy 2, 16177 (2017)",
+      "doi": "10.1038/nenergy.2016.177",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "koh_2014_jpcc": {
+      "ref_id": "koh_2014_jpcc",
+      "citation": "T. M. Koh et al., 'Formamidinium-containing metal-halide: an alternative material for near-IR absorption perovskite solar cells,' J. Phys. Chem. C 118, 16458 (2014)",
+      "doi": "10.1021/jp411112k",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "liu_2013_planar_deposition": {
+      "ref_id": "liu_2013_planar_deposition",
+      "citation": "M. Liu, M. B. Johnston, H. J. Snaith, 'Efficient planar heterojunction perovskite solar cells by vapour deposition,' Nature 501, 395 (2013)",
+      "doi": "10.1038/nature12509",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "minemoto_2015_solmat": {
+      "ref_id": "minemoto_2015_solmat",
+      "citation": "Minemoto & Murata, Sol. Energy Mater. Sol. Cells 133, 8 (2015)",
+      "doi": "10.1016/j.solmat.2014.10.036",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "ponseca_2014_jacs": {
+      "ref_id": "ponseca_2014_jacs",
+      "citation": "C. S. Ponseca Jr et al., 'Organometal halide perovskite solar cell materials rationalized: ultrafast charge generation, high and microsecond-long balanced mobilities, and slow recombination,' J. Am. Chem. Soc. 136, 5189 (2014)",
+      "doi": "10.1021/ja412583t",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "richter_2016_natcomm": {
+      "ref_id": "richter_2016_natcomm",
+      "citation": "Richter et al., Nat. Commun. 7, 13941 (2016)",
+      "doi": "10.1038/ncomms13941",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "saliba_2016_ees": {
+      "ref_id": "saliba_2016_ees",
+      "citation": "Saliba M., Matsui T., Seo J.Y. et al., \"Cesium-containing triple cation perovskite solar cells: improved stability, reproducibility and high efficiency\", Energy Environ. Sci. 9, 1989-1997 (2016)",
+      "doi": "10.1039/c5ee03874j",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "savva_2019_aem_PEDOT": {
+      "ref_id": "savva_2019_aem_PEDOT",
+      "citation": "A. Savva et al., 'PEDOT:PSS in perovskite solar cells,' Solar RRL 3, 1900033 (2019)",
+      "doi": "10.1002/solr.201900033",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "shi_2015": {
+      "ref_id": "shi_2015",
+      "citation": "Shi et al., Science 347, 519 (2015)",
+      "doi": "10.1126/science.aaa2725",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "snaith_2013_jpcl": {
+      "ref_id": "snaith_2013_jpcl",
+      "citation": "H. J. Snaith et al., 'Anomalous hysteresis in perovskite solar cells,' J. Phys. Chem. Lett. 5, 1511 (2014)",
+      "doi": "10.1021/jz500113x",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "stranks_2013": {
+      "ref_id": "stranks_2013",
+      "citation": "Stranks et al., Science 342, 341 (2013)",
+      "doi": "10.1126/science.1243982",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "tiep_2016_aem_ZnO": {
+      "ref_id": "tiep_2016_aem_ZnO",
+      "citation": "N. H. Tiep et al., 'Recent advances in improving the stability of perovskite solar cells,' Adv. Energy Mater. 6, 1501420 (2016)",
+      "doi": "10.1002/aenm.201501420",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "wang_2019_acsel_sn": {
+      "ref_id": "wang_2019_acsel_sn",
+      "citation": "F. Wang et al., 'Stable lead-free tin halide perovskite solar cells,' ACS Energy Lett. 4, 222 (2019)",
+      "doi": "10.1021/acsenergylett.8b02281",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "yang_2015_nat_materials": {
+      "ref_id": "yang_2015_nat_materials",
+      "citation": "W. S. Yang et al., 'High-performance photovoltaic perovskite layers fabricated through intramolecular exchange,' Science 348, 1234 (2015)",
+      "doi": "10.1126/science.aaa9272",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "yang_2015_science": {
+      "ref_id": "yang_2015_science",
+      "citation": "Yang W.S., Noh J.H., Jeon N.J. et al., \"High-performance photovoltaic perovskite layers fabricated through intramolecular exchange\", Science 348, 1234-1237 (2015)",
+      "doi": "10.1126/science.aaa9272",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "yoo_2021_nature": {
+      "ref_id": "yoo_2021_nature",
+      "citation": "J. J. Yoo et al., 'Efficient perovskite solar cells via improved carrier management,' Nature 590, 587 (2021)",
+      "doi": "10.1038/s41586-021-03285-w",
+      "doi_format_valid": true,
+      "issues": []
+    },
+    "zhao_2017_aem": {
+      "ref_id": "zhao_2017_aem",
+      "citation": "Zhao et al., Adv. Energy Mater. 7, 1700131 (2017)",
+      "doi": "10.1002/aenm.201700131",
+      "doi_format_valid": true,
+      "issues": []
+    }
+  }
+}
